@@ -45,8 +45,9 @@ var endpoint = 'https://www.googleapis.com/youtube/v3/search';
 				imageLink = data.items[index].id.videoId; 
 				console.log(data);
 				index++;
-				// results += '<iframe width="560" height="315" src="https://www.youtube.com/embed/dgHRwscpPIA" frameborder="0" allowfullscreen></iframe>'
 				results += '<a href="https://www.youtube.com/watch?v=' + imageLink + '" target="_blank">' + '<img src ="' + image + '"/>' + '</a>';
+				// results += '<iframe width="560" height="315" src="https://www.youtube.com/embed/dgHRwscpPIA" frameborder="0" allowfullscreen></iframe>'
+				// results += '<a href="https://www.youtube.com/watch?v=' + imageLink + '" target="_blank">' + '<img src ="' + image + '"/>' + '</a>';
 			}
 
 			// <iframe width="560" height="315" src="https://www.youtube.com/embed/dgHRwscpPIA" frameborder="0" allowfullscreen></iframe>
