@@ -2,6 +2,7 @@
 //testing 
 
 var endpoint = 'https://www.googleapis.com/youtube/v3/search';
+//https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyA1irBtJU79pBNkNC8g0HplNyy0Cd4TAhk
 
 //function that getDataFromApi
 	//parameters: searchTerm, callback
@@ -33,7 +34,22 @@ var endpoint = 'https://www.googleapis.com/youtube/v3/search';
 
 	function displaySearchData(data){
 		var results = '';
-		console.log(data.items[1].publishedAt);
+		var itemsLength = data.items.length; 
+		var index = 0; 
+		var image = data.items[index].snippet.thumbnails.default.url;
+
+		if (image) {
+			while (index < itemsLength) {
+				image = data.items[index].snippet.thumbnails.default.url;
+				index++;
+				results += '<img src ="' + image + '"/>';
+			}
+		}
+		// else {
+		// 	results += '<p> No results</p>';
+		// }
+		
+		$('.js-search-results').html(results);
 	}
 
 
