@@ -31,8 +31,22 @@ var endpoint = 'https://www.googleapis.com/youtube/v3/search';
 	//else return html that says that no results
 	//final call to inject the html to the page .html()
 
+	function displaySearchData(data){
+		var results = '';
+		console.log(data.items[1].publishedAt);
+	}
+
+
 //event listener that listens for clicks on the submit button
 	//select the form, then find the input value, save to variable
 	//call our getDataFromApi function, pass in the parameters of the query variable above and displaySearchData
-
+	function watchSubmit() {
+			$('.js-form').submit(function(event) {
+				event.preventDefault();
+				var query = $(this).find('.js-input').val();
+				console.log(query);
+				getDataFromApi(query, displaySearchData);
+			})
+		}	
+$(function(){watchSubmit()});
 //document ready to load the submit event 
