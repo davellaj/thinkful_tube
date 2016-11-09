@@ -1,0 +1,22 @@
+body{
+	/*padding-top: 50px;*/
+	padding: 30px; 
+}
+
+label{
+	display: inline-block;
+	width: 100%;
+}
+
+/*div{
+	display: inline-block;
+	width: 100%;
+}*/
+
+img{
+	padding: 30px;
+}
+
+.js-search-results{
+	margin: 0 auto;
+}

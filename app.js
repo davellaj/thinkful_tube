@@ -62,6 +62,7 @@ var endpoint = 'https://www.googleapis.com/youtube/v3/search';
 				var query = $(this).find('.js-input').val();
 				console.log(query);
 				getDataFromApi(query, displaySearchData);
+				this.reset();
 			})
 		}	
 $(function(){watchSubmit()});
