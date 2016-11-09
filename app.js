@@ -37,13 +37,19 @@ var endpoint = 'https://www.googleapis.com/youtube/v3/search';
 		var itemsLength = data.items.length; 
 		var index = 0; 
 		var image = data.items[index].snippet.thumbnails.default.url;
+		var imageLink; 
 
 		if (image) {
 			while (index < itemsLength) {
 				image = data.items[index].snippet.thumbnails.default.url;
+				imageLink = data.items[index].id.videoId; 
+				console.log(data);
 				index++;
-				results += '<img src ="' + image + '"/>';
+				// results += '<iframe width="560" height="315" src="https://www.youtube.com/embed/dgHRwscpPIA" frameborder="0" allowfullscreen></iframe>'
+				results += '<a href="https://www.youtube.com/watch?v=' + imageLink + '" target="_blank">' + '<img src ="' + image + '"/>' + '</a>';
 			}
+
+			// <iframe width="560" height="315" src="https://www.youtube.com/embed/dgHRwscpPIA" frameborder="0" allowfullscreen></iframe>
 		}
 		// else {
 		// 	results += '<p> No results</p>';
